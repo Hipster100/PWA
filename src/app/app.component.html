@@ -1,0 +1,27 @@
+
+<h3> News</h3>
+<!-- 
+<input [(ngModel)]="name" ngDefaultControl>
+<div>{{name}}</div> -->
+
+
+  <button (click)="getDevice()">connect</button>
+
+
+<select id="sourceSelector" (change)="changeSource($event)">
+  <option   *ngFor="let source of mySource" value="{{source.id}}">{{source.name}}</option>
+
+  <option selected="selected">Wired</option>
+</select>
+
+<div >
+
+  <li [ngModel]="myArticles" ngDefaultControl class="article" *ngFor="let article of myArticles">
+    <a href="{{article.url}}">
+      <h2>{{article.title}}</h2>
+      <img class="image-size" src="{{article.urlToImage}}">
+      <p>{{article.description}}</p>
+    </a>
+  </li>
+
+</div>
